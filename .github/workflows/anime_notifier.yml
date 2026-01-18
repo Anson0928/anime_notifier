@@ -23,16 +23,6 @@ jobs:
         run: |
           pip install requests beautifulsoup4 python-dotenv
         
-      - name: Test environment variables
-        run: |
-          if [ -z "$EMAIL_ADDRESS" ]; then
-            echo "EMAIL_ADDRESS is empty"
-            exit 1
-          else
-            echo "EMAIL_ADDRESS is set"
-          fi
-        env:
-          EMAIL_ADDRESS: ${{ secrets.EMAIL_ADDRESS }}
 
       - name: Run anime notifier
         env:
