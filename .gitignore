@@ -3,4 +3,5 @@ __pycache__/
 *.py[cod]
 .vscode/
 *.json
-*.loganime_list.txt
+*.log
+anime_list.txt
