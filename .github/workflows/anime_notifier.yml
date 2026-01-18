@@ -1,0 +1,32 @@
+name: Anime Notifier
+
+on:
+  schedule: # minutes, hours, day of month, month, day of week
+    - cron: "0 17 * * *"   # 17:00 UTC → 10:00 SLC
+    - cron: "0 2 * * *"    # 02:00 UTC → 19:00 SLC
+  workflow_dispatch:        # allow manual run
+
+jobs:
+  run-notifier:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          pip install requests beautifulsoup4 python-dotenv
+
+      - name: Run anime notifier
+        env:
+          EMAIL_ADDRESS: ${{ secrets.EMAIL_ADDRESS }}
+          EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
+          EMAIL_RECEIVER: ${{ secrets.EMAIL_RECEIVER }}
+        run: |
+          python anime_notifier.py
