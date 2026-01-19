@@ -3,7 +3,6 @@ name: Anime Notifier
 on:
   schedule: # minutes, hours, day of month, month, day of week
     - cron: "0 17 * * *"   # 17:00 UTC → 10:00 SLC
-    - cron: "0 2 * * *"    # 02:00 UTC → 19:00 SLC
   workflow_dispatch:        # allow manual run
 
 jobs:
