@@ -36,6 +36,18 @@ Whenever a new episode is released, it sends you an Email instantly.
 
 - ✅ Works even if your computer is off, thanks to GitHub Actions
 
+---
+
+## 🛠️ Technologies Used
+
+- **Programming Language:** Python
+- **Web Scraping:** requests, BeautifulSoup4
+- **Data Storage:** JSON, Text file
+- **Environment Management:** python-dotenv, GitHub Actions Secrets
+- **Automation / CI/CD:** GitHub Actions (scheduled workflow, automatic email notifications)
+- **Email Notifications:** smtplib, email.mime
+- **Version Control & Deployment:** Git, GitHub
+
 <!--
 ## 🛠️ 使用方法 How to Use
 
